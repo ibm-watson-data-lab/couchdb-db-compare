@@ -1,23 +1,35 @@
 # couchdb-db-compare
 
-Simple utility script that compares two unloaded couchdb databases using [obj_diff](https://github.com/iriscouch/obj_diff).
+Simple utility script that compares the content of two unloaded couchdb databases using [obj_diff](https://github.com/iriscouch/obj_diff).
 
-##### Unload database 1
+### Getting started
+
+To compare the content ...
+
+#### Download and install the utility
+
+```
+$ git clone https://github.com/ibm-cds-labs/couchdb-db-compare.git
+$ cd couchdb-db-compare
+$ npm install
+```
+
+#### Unload database 1
 
 ```
 $ curl -X GET "https://$USERNAME:$PASSWORD@$REMOTE_USERNAME.cloudant.com/$DATABASE_NAME_1/_all_docs?include_docs=true&attachments=true" -o db1.json
 ```
 
-##### Unload database 2
+#### Unload database 2
 
 ```
 $ curl -X GET "https://$USERNAME:$PASSWORD@$REMOTE_USERNAME.cloudant.com/$DATABASE_NAME_2/_all_docs?include_docs=true&attachments=true" -o db2.json
 ```
 
-##### Compare documents
+#### Compare documents
 
 ```
-$ node compare db1.json db2.json 2> db1_db2_diff.log
+$ node compare.js db1.json db2.json 2> db1_db2_diff.log
 Loading ...
 Loaded data file 1: 2838ms
 Loaded data file 2: 3501ms
@@ -47,3 +59,19 @@ Diff {
 ...
 
 ```
+
+### License 
+
+Copyright 2016 IBM Cloud Data Services
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
