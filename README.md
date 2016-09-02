@@ -29,7 +29,7 @@ $ curl -X GET "https://$USERNAME:$PASSWORD@$REMOTE_USERNAME.cloudant.com/$DATABA
 #### Compare documents
 
 ```
-$ node compare.js db1.json db2.json 2> db1_db2_diff.log
+$ node compare.js ./db1.json ./db2.json 2> db1_db2_diff.log
 Loading ...
 Loaded data file 1: 2838ms
 Loaded data file 2: 3501ms
