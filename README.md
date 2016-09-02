@@ -1,5 +1,7 @@
 # couchdb-db-compare
 
+![build status](https://travis-ci.org/ibm-cds-labs/couchdb-db-compare.svg?branch=master)
+
 Simple utility script that compares the content of two unloaded couchdb databases using [obj_diff](https://github.com/iriscouch/obj_diff).
 
 ### Getting started
